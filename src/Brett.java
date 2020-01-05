@@ -406,16 +406,17 @@ public class Brett extends JFrame {
             public void actionPerformed(ActionEvent arg0) {
                 if(press(buttonC3, 2, 2)) {
                     int[] y;
+                    //Die Ki holt zufällig ein feld
                     y = ai.getRandom();
 
-
+                    //Wir haben festgelegt das wir die Koordinate 4,4 zurückgeben wenn es ein unentschieden ist
                     if(y[0]==4 && y[1]==4){
                         JOptionPane.showMessageDialog(null, "It's a draw!");
                         System.exit(NORMAL);
                     }
 
+                    //Hier wird relativ umständlich das das "O" für das Zufallsfeld gesetzt
                     ai.setPressed(y[0], y[1]);
-
                     if (y[0] == 0 && y[1] == 0) {
                         buttonA1.setText("O");
                     } else if (y[0] == 0 && y[1] == 1) {
@@ -436,7 +437,9 @@ public class Brett extends JFrame {
                         buttonC3.setText("O");
                     }
 
-                    if (ai.checkWinAi() == true) {
+                    //Nun wird geprüft ob der Computer gewonnen hat
+                    if (ai.checkWinAi()) {
+                        //Falls der Computer gewonnen hat wird dem User angezeigt, dass er verloren hat
                         JOptionPane.showMessageDialog(null, "You Lost!");
                         System.exit(NORMAL);
                     }
@@ -470,24 +473,28 @@ public class Brett extends JFrame {
      * @return
      */
     public boolean press(JButton button, int zeile, int reihe) {
-
+        //Hier wird geprüft ob das Feld schon gewählt wurde
         if (!pressed[zeile][reihe] && !ai.getAiPressed()[zeile][reihe]) {
-
+            //Falls das Feld verfügbar ist wird das Feld im array auf true geschalten
             pressed[zeile][reihe] = true;
+            //Für den user wird im feld nun ein X gesetzt
             button.setText("X");
 
+            //Falls das feld nicht mehr verfügbar ist...
         } else {
-            JOptionPane.showMessageDialog(null, "You can't select a field twice!");
+            //...erscheint ein Popup
+            JOptionPane.showMessageDialog(null, "This field is already occupied!");
             return false;
         }
 
-        pressed[zeile][reihe] = true;
-
+        //Nun wird geprüft ob der User gewonnen hat
         if (Ai.checkWinPlayer()) {
+            //Falls der User gewonnen hat erscheint ein Popup und nachdem er den Popup schliesst, schliesst das Programm
             JOptionPane.showMessageDialog(null, "You win!");
             System.exit(NORMAL);
         }
 
+        //Nun werden die noch offenen Felder an die KI geschickt, somit er eins auswählen kann
         ai.getAvailableMoves();
 
         return true;
