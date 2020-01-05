@@ -75,35 +75,40 @@ public class Brett extends JFrame {
         buttonA1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
 
-                press(buttonA1, 0, 0);
+                if(press(buttonA1, 0, 0)) {
 
-                int[] y;
-                y = ai.minimax(0, 0);
+                    int[] y;
+                    y = ai.getRandom();
 
-                ai.setPressed(y[0], y[1]);
-                if (y[0] == 0 && y[1] == 0) {
-                    buttonA1.setText("O");
-                } else if (y[0] == 0 && y[1] == 1) {
-                    buttonA2.setText("O");
-                } else if (y[0] == 0 && y[1] == 2) {
-                    buttonA3.setText("O");
-                } else if (y[0] == 1 && y[1] == 0) {
-                    buttonB1.setText("O");
-                } else if (y[0] == 1 && y[1] == 1) {
-                    buttonB2.setText("O");
-                } else if (y[0] == 1 && y[1] == 2) {
-                    buttonB3.setText("O");
-                } else if (y[0] == 2 && y[1] == 0) {
-                    buttonC1.setText("O");
-                } else if (y[0] == 2 && y[1] == 1) {
-                    buttonC2.setText("O");
-                } else if (y[0] == 2 && y[1] == 2) {
-                    buttonC3.setText("O");
-                }
+                    if(y[0]==4 && y[1]==4){
+                        JOptionPane.showMessageDialog(null, "It's a draw!");
+                        System.exit(NORMAL);
+                    }
+                    ai.setPressed(y[0], y[1]);
+                    if (y[0] == 0 && y[1] == 0) {
+                        buttonA1.setText("O");
+                    } else if (y[0] == 0 && y[1] == 1) {
+                        buttonA2.setText("O");
+                    } else if (y[0] == 0 && y[1] == 2) {
+                        buttonA3.setText("O");
+                    } else if (y[0] == 1 && y[1] == 0) {
+                        buttonB1.setText("O");
+                    } else if (y[0] == 1 && y[1] == 1) {
+                        buttonB2.setText("O");
+                    } else if (y[0] == 1 && y[1] == 2) {
+                        buttonB3.setText("O");
+                    } else if (y[0] == 2 && y[1] == 0) {
+                        buttonC1.setText("O");
+                    } else if (y[0] == 2 && y[1] == 1) {
+                        buttonC2.setText("O");
+                    } else if (y[0] == 2 && y[1] == 2) {
+                        buttonC3.setText("O");
+                    }
 
-                if (ai.checkWinAi() == true) {
-                    JOptionPane.showMessageDialog(null, "You Lost!");
-                    System.exit(NORMAL);
+                    if (ai.checkWinAi() == true) {
+                        JOptionPane.showMessageDialog(null, "You Lost!");
+                        System.exit(NORMAL);
+                    }
                 }
             }
 
@@ -111,107 +116,122 @@ public class Brett extends JFrame {
 
         buttonA2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                press(buttonA2, 0, 1);
+                if(press(buttonA2, 0, 1)) {
 
-                int[] y;
-                y = ai.minimax(0, 1);
+                    int[] y;
+                    y = ai.getRandom();
 
-                ai.setPressed(y[0], y[1]);
-                if (y[0] == 0 && y[1] == 0) {
-                    buttonA1.setText("O");
-                } else if (y[0] == 0 && y[1] == 1) {
-                    buttonA2.setText("O");
-                } else if (y[0] == 0 && y[1] == 2) {
-                    buttonA3.setText("O");
-                } else if (y[0] == 1 && y[1] == 0) {
-                    buttonB1.setText("O");
-                } else if (y[0] == 1 && y[1] == 1) {
-                    buttonB2.setText("O");
-                } else if (y[0] == 1 && y[1] == 2) {
-                    buttonB3.setText("O");
-                } else if (y[0] == 2 && y[1] == 0) {
-                    buttonC1.setText("O");
-                } else if (y[0] == 2 && y[1] == 1) {
-                    buttonC2.setText("O");
-                } else if (y[0] == 2 && y[1] == 2) {
-                    buttonC3.setText("O");
-                }
+                    if(y[0]==4 && y[1]==4){
+                        JOptionPane.showMessageDialog(null, "It's a draw!");
+                        System.exit(NORMAL);
+                    }
+                    ai.setPressed(y[0], y[1]);
+                    if (y[0] == 0 && y[1] == 0) {
+                        buttonA1.setText("O");
+                    } else if (y[0] == 0 && y[1] == 1) {
+                        buttonA2.setText("O");
+                    } else if (y[0] == 0 && y[1] == 2) {
+                        buttonA3.setText("O");
+                    } else if (y[0] == 1 && y[1] == 0) {
+                        buttonB1.setText("O");
+                    } else if (y[0] == 1 && y[1] == 1) {
+                        buttonB2.setText("O");
+                    } else if (y[0] == 1 && y[1] == 2) {
+                        buttonB3.setText("O");
+                    } else if (y[0] == 2 && y[1] == 0) {
+                        buttonC1.setText("O");
+                    } else if (y[0] == 2 && y[1] == 1) {
+                        buttonC2.setText("O");
+                    } else if (y[0] == 2 && y[1] == 2) {
+                        buttonC3.setText("O");
+                    }
 
-                if (ai.checkWinAi() == true) {
-                    JOptionPane.showMessageDialog(null, "You Lost!");
-                    System.exit(NORMAL);
+                    if (ai.checkWinAi() == true) {
+                        JOptionPane.showMessageDialog(null, "You Lost!");
+                        System.exit(NORMAL);
+                    }
                 }
             }
         });
 
         buttonA3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                press(buttonA3, 0, 2);
+                if(press(buttonA3, 0, 2)) {
 
-                int[] y;
-                y = ai.minimax(0, 2);
+                    int[] y;
+                    y = ai.getRandom();
 
-                ai.setPressed(y[0], y[1]);
+                    if(y[0]==4 && y[1]==4){
+                        JOptionPane.showMessageDialog(null, "It's a draw!");
+                        System.exit(NORMAL);
+                    }
+                    ai.setPressed(y[0], y[1]);
 
-                if (y[0] == 0 && y[1] == 0) {
-                    buttonA1.setText("O");
-                } else if (y[0] == 0 && y[1] == 1) {
-                    buttonA2.setText("O");
-                } else if (y[0] == 0 && y[1] == 2) {
-                    buttonA3.setText("O");
-                } else if (y[0] == 1 && y[1] == 0) {
-                    buttonB1.setText("O");
-                } else if (y[0] == 1 && y[1] == 1) {
-                    buttonB2.setText("O");
-                } else if (y[0] == 1 && y[1] == 2) {
-                    buttonB3.setText("O");
-                } else if (y[0] == 2 && y[1] == 0) {
-                    buttonC1.setText("O");
-                } else if (y[0] == 2 && y[1] == 1) {
-                    buttonC2.setText("O");
-                } else if (y[0] == 2 && y[1] == 2) {
-                    buttonC3.setText("O");
-                }
+                    if (y[0] == 0 && y[1] == 0) {
+                        buttonA1.setText("O");
+                    } else if (y[0] == 0 && y[1] == 1) {
+                        buttonA2.setText("O");
+                    } else if (y[0] == 0 && y[1] == 2) {
+                        buttonA3.setText("O");
+                    } else if (y[0] == 1 && y[1] == 0) {
+                        buttonB1.setText("O");
+                    } else if (y[0] == 1 && y[1] == 1) {
+                        buttonB2.setText("O");
+                    } else if (y[0] == 1 && y[1] == 2) {
+                        buttonB3.setText("O");
+                    } else if (y[0] == 2 && y[1] == 0) {
+                        buttonC1.setText("O");
+                    } else if (y[0] == 2 && y[1] == 1) {
+                        buttonC2.setText("O");
+                    } else if (y[0] == 2 && y[1] == 2) {
+                        buttonC3.setText("O");
+                    }
 
-                if (ai.checkWinAi() == true) {
-                    JOptionPane.showMessageDialog(null, "You Lost!");
-                    System.exit(NORMAL);
+                    if (ai.checkWinAi() == true) {
+                        JOptionPane.showMessageDialog(null, "You Lost!");
+                        System.exit(NORMAL);
+                    }
                 }
             }
         });
 
         buttonB1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                press(buttonB1, 1, 0);
+                if(press(buttonB1, 1, 0)) {
 
-                int[] y;
-                y = ai.minimax(1, 0);
+                    int[] y;
+                    y = ai.getRandom();
 
-                ai.setPressed(y[0], y[1]);
+                    if(y[0]==4 && y[1]==4){
+                        JOptionPane.showMessageDialog(null, "It's a draw!");
+                        System.exit(NORMAL);
+                    }
+                    ai.setPressed(y[0], y[1]);
 
-                if (y[0] == 0 && y[1] == 0) {
-                    buttonA1.setText("O");
-                } else if (y[0] == 0 && y[1] == 1) {
-                    buttonA2.setText("O");
-                } else if (y[0] == 0 && y[1] == 2) {
-                    buttonA3.setText("O");
-                } else if (y[0] == 1 && y[1] == 0) {
-                    buttonB1.setText("O");
-                } else if (y[0] == 1 && y[1] == 1) {
-                    buttonB2.setText("O");
-                } else if (y[0] == 1 && y[1] == 2) {
-                    buttonB3.setText("O");
-                } else if (y[0] == 2 && y[1] == 0) {
-                    buttonC1.setText("O");
-                } else if (y[0] == 2 && y[1] == 1) {
-                    buttonC2.setText("O");
-                } else if (y[0] == 2 && y[1] == 2) {
-                    buttonC3.setText("O");
-                }
+                    if (y[0] == 0 && y[1] == 0) {
+                        buttonA1.setText("O");
+                    } else if (y[0] == 0 && y[1] == 1) {
+                        buttonA2.setText("O");
+                    } else if (y[0] == 0 && y[1] == 2) {
+                        buttonA3.setText("O");
+                    } else if (y[0] == 1 && y[1] == 0) {
+                        buttonB1.setText("O");
+                    } else if (y[0] == 1 && y[1] == 1) {
+                        buttonB2.setText("O");
+                    } else if (y[0] == 1 && y[1] == 2) {
+                        buttonB3.setText("O");
+                    } else if (y[0] == 2 && y[1] == 0) {
+                        buttonC1.setText("O");
+                    } else if (y[0] == 2 && y[1] == 1) {
+                        buttonC2.setText("O");
+                    } else if (y[0] == 2 && y[1] == 2) {
+                        buttonC3.setText("O");
+                    }
 
-                if (ai.checkWinAi() == true) {
-                    JOptionPane.showMessageDialog(null, "You Lost!");
-                    System.exit(NORMAL);
+                    if (ai.checkWinAi() == true) {
+                        JOptionPane.showMessageDialog(null, "You Lost!");
+                        System.exit(NORMAL);
+                    }
                 }
             }
         });
@@ -219,181 +239,207 @@ public class Brett extends JFrame {
         buttonB2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
 
-                press(buttonB2, 1, 1);
+                if(press(buttonB2, 1, 1)) {
 
 
-                int[] y;
-                y = ai.minimax(1, 1);
+                    int[] y;
+                    y = ai.getRandom();
 
-                ai.setPressed(y[0], y[1]);
+                    if(y[0]==4 && y[1]==4){
+                        JOptionPane.showMessageDialog(null, "It's a draw!");
+                        System.exit(NORMAL);
+                    }
+                    ai.setPressed(y[0], y[1]);
 
-                if (y[0] == 0 && y[1] == 0) {
-                    buttonA1.setText("O");
-                } else if (y[0] == 0 && y[1] == 1) {
-                    buttonA2.setText("O");
-                } else if (y[0] == 0 && y[1] == 2) {
-                    buttonA3.setText("O");
-                } else if (y[0] == 1 && y[1] == 0) {
-                    buttonB1.setText("O");
-                } else if (y[0] == 1 && y[1] == 1) {
-                    buttonB2.setText("O");
-                } else if (y[0] == 1 && y[1] == 2) {
-                    buttonB3.setText("O");
-                } else if (y[0] == 2 && y[1] == 0) {
-                    buttonC1.setText("O");
-                } else if (y[0] == 2 && y[1] == 1) {
-                    buttonC2.setText("O");
-                } else if (y[0] == 2 && y[1] == 2) {
-                    buttonC3.setText("O");
-                }
+                    if (y[0] == 0 && y[1] == 0) {
+                        buttonA1.setText("O");
+                    } else if (y[0] == 0 && y[1] == 1) {
+                        buttonA2.setText("O");
+                    } else if (y[0] == 0 && y[1] == 2) {
+                        buttonA3.setText("O");
+                    } else if (y[0] == 1 && y[1] == 0) {
+                        buttonB1.setText("O");
+                    } else if (y[0] == 1 && y[1] == 1) {
+                        buttonB2.setText("O");
+                    } else if (y[0] == 1 && y[1] == 2) {
+                        buttonB3.setText("O");
+                    } else if (y[0] == 2 && y[1] == 0) {
+                        buttonC1.setText("O");
+                    } else if (y[0] == 2 && y[1] == 1) {
+                        buttonC2.setText("O");
+                    } else if (y[0] == 2 && y[1] == 2) {
+                        buttonC3.setText("O");
+                    }
 
-                if (ai.checkWinAi() == true) {
-                    JOptionPane.showMessageDialog(null, "You Lost!");
-                    System.exit(NORMAL);
+                    if (ai.checkWinAi() == true) {
+                        JOptionPane.showMessageDialog(null, "You Lost!");
+                        System.exit(NORMAL);
+                    }
                 }
             }
         });
 
         buttonB3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                press(buttonB3, 1, 2);
+                if(press(buttonB3, 1, 2)) {
 
-                int[] y;
-                y = ai.minimax(1, 2);
+                    int[] y;
+                    y = ai.getRandom();
 
-                ai.setPressed(y[0], y[1]);
+                    ai.setPressed(y[0], y[1]);
 
-                if (y[0] == 0 && y[1] == 0) {
-                    buttonA1.setText("O");
-                } else if (y[0] == 0 && y[1] == 1) {
-                    buttonA2.setText("O");
-                } else if (y[0] == 0 && y[1] == 2) {
-                    buttonA3.setText("O");
-                } else if (y[0] == 1 && y[1] == 0) {
-                    buttonB1.setText("O");
-                } else if (y[0] == 1 && y[1] == 1) {
-                    buttonB2.setText("O");
-                } else if (y[0] == 1 && y[1] == 2) {
-                    buttonB3.setText("O");
-                } else if (y[0] == 2 && y[1] == 0) {
-                    buttonC1.setText("O");
-                } else if (y[0] == 2 && y[1] == 1) {
-                    buttonC2.setText("O");
-                } else if (y[0] == 2 && y[1] == 2) {
-                    buttonC3.setText("O");
-                }
+                    if(y[0]==4 && y[1]==4){
+                        JOptionPane.showMessageDialog(null, "It's a draw!");
+                        System.exit(NORMAL);
+                    }
+                    if (y[0] == 0 && y[1] == 0) {
+                        buttonA1.setText("O");
+                    } else if (y[0] == 0 && y[1] == 1) {
+                        buttonA2.setText("O");
+                    } else if (y[0] == 0 && y[1] == 2) {
+                        buttonA3.setText("O");
+                    } else if (y[0] == 1 && y[1] == 0) {
+                        buttonB1.setText("O");
+                    } else if (y[0] == 1 && y[1] == 1) {
+                        buttonB2.setText("O");
+                    } else if (y[0] == 1 && y[1] == 2) {
+                        buttonB3.setText("O");
+                    } else if (y[0] == 2 && y[1] == 0) {
+                        buttonC1.setText("O");
+                    } else if (y[0] == 2 && y[1] == 1) {
+                        buttonC2.setText("O");
+                    } else if (y[0] == 2 && y[1] == 2) {
+                        buttonC3.setText("O");
+                    }
 
-                if (ai.checkWinAi() == true) {
-                    JOptionPane.showMessageDialog(null, "You Lost!");
-                    System.exit(NORMAL);
+                    if (ai.checkWinAi() == true) {
+                        JOptionPane.showMessageDialog(null, "You Lost!");
+                        System.exit(NORMAL);
+                    }
                 }
             }
         });
 
         buttonC1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                press(buttonC1, 2, 0);
+                if(press(buttonC1, 2, 0)) {
 
-                int[] y;
-                y = ai.minimax(2, 0);
+                    int[] y;
+                    y = ai.getRandom();
 
-                ai.setPressed(y[0], y[1]);
+                    if(y[0]==4 && y[1]==4){
+                        JOptionPane.showMessageDialog(null, "It's a draw!");
+                        System.exit(NORMAL);
+                    }
+                    ai.setPressed(y[0], y[1]);
 
-                if (y[0] == 0 && y[1] == 0) {
-                    buttonA1.setText("O");
-                } else if (y[0] == 0 && y[1] == 1) {
-                    buttonA2.setText("O");
-                } else if (y[0] == 0 && y[1] == 2) {
-                    buttonA3.setText("O");
-                } else if (y[0] == 1 && y[1] == 0) {
-                    buttonB1.setText("O");
-                } else if (y[0] == 1 && y[1] == 1) {
-                    buttonB2.setText("O");
-                } else if (y[0] == 1 && y[1] == 2) {
-                    buttonB3.setText("O");
-                } else if (y[0] == 2 && y[1] == 0) {
-                    buttonC1.setText("O");
-                } else if (y[0] == 2 && y[1] == 1) {
-                    buttonC2.setText("O");
-                } else if (y[0] == 2 && y[1] == 2) {
-                    buttonC3.setText("O");
-                }
+                    if (y[0] == 0 && y[1] == 0) {
+                        buttonA1.setText("O");
+                    } else if (y[0] == 0 && y[1] == 1) {
+                        buttonA2.setText("O");
+                    } else if (y[0] == 0 && y[1] == 2) {
+                        buttonA3.setText("O");
+                    } else if (y[0] == 1 && y[1] == 0) {
+                        buttonB1.setText("O");
+                    } else if (y[0] == 1 && y[1] == 1) {
+                        buttonB2.setText("O");
+                    } else if (y[0] == 1 && y[1] == 2) {
+                        buttonB3.setText("O");
+                    } else if (y[0] == 2 && y[1] == 0) {
+                        buttonC1.setText("O");
+                    } else if (y[0] == 2 && y[1] == 1) {
+                        buttonC2.setText("O");
+                    } else if (y[0] == 2 && y[1] == 2) {
+                        buttonC3.setText("O");
+                    }
 
-                if (ai.checkWinAi() == true) {
-                    JOptionPane.showMessageDialog(null, "You Lost!");
-                    System.exit(NORMAL);
+                    if (ai.checkWinAi() == true) {
+                        JOptionPane.showMessageDialog(null, "You Lost!");
+                        System.exit(NORMAL);
+                    }
                 }
             }
         });
 
         buttonC2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                press(buttonC2, 2, 1);
+                if(press(buttonC2, 2, 1)) {
 
-                int[] y;
-                y = ai.minimax(2, 1);
+                    int[] y;
+                    y = ai.getRandom();
 
-                ai.setPressed(y[0], y[1]);
+                    if(y[0]==4 && y[1]==4){
+                        JOptionPane.showMessageDialog(null, "It's a draw!");
+                        System.exit(NORMAL);
+                    }
+                    ai.setPressed(y[0], y[1]);
 
-                if (y[0] == 0 && y[1] == 0) {
-                    buttonA1.setText("O");
-                } else if (y[0] == 0 && y[1] == 1) {
-                    buttonA2.setText("O");
-                } else if (y[0] == 0 && y[1] == 2) {
-                    buttonA3.setText("O");
-                } else if (y[0] == 1 && y[1] == 0) {
-                    buttonB1.setText("O");
-                } else if (y[0] == 1 && y[1] == 1) {
-                    buttonB2.setText("O");
-                } else if (y[0] == 1 && y[1] == 2) {
-                    buttonB3.setText("O");
-                } else if (y[0] == 2 && y[1] == 0) {
-                    buttonC1.setText("O");
-                } else if (y[0] == 2 && y[1] == 1) {
-                    buttonC2.setText("O");
-                } else if (y[0] == 2 && y[1] == 2) {
-                    buttonC3.setText("O");
-                }
+                    if (y[0] == 0 && y[1] == 0) {
+                        buttonA1.setText("O");
+                    } else if (y[0] == 0 && y[1] == 1) {
+                        buttonA2.setText("O");
+                    } else if (y[0] == 0 && y[1] == 2) {
+                        buttonA3.setText("O");
+                    } else if (y[0] == 1 && y[1] == 0) {
+                        buttonB1.setText("O");
+                    } else if (y[0] == 1 && y[1] == 1) {
+                        buttonB2.setText("O");
+                    } else if (y[0] == 1 && y[1] == 2) {
+                        buttonB3.setText("O");
+                    } else if (y[0] == 2 && y[1] == 0) {
+                        buttonC1.setText("O");
+                    } else if (y[0] == 2 && y[1] == 1) {
+                        buttonC2.setText("O");
+                    } else if (y[0] == 2 && y[1] == 2) {
+                        buttonC3.setText("O");
+                    }
 
-                if (ai.checkWinAi() == true) {
-                    JOptionPane.showMessageDialog(null, "You Lost!");
-                    System.exit(NORMAL);
+                    if (ai.checkWinAi() == true) {
+                        JOptionPane.showMessageDialog(null, "You Lost!");
+                        System.exit(NORMAL);
+                    }
                 }
             }
         });
 
         buttonC3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                press(buttonC3, 2, 2);
+                if(press(buttonC3, 2, 2)) {
+                    int[] y;
+                    y = ai.getRandom();
 
-                int[] y;
-                y = ai.minimax(2, 2);
 
-                ai.setPressed(y[0], y[1]);
+                    if(y[0]==4 && y[1]==4){
+                        JOptionPane.showMessageDialog(null, "It's a draw!");
+                        System.exit(NORMAL);
+                    }
 
-                if (y[0] == 0 && y[1] == 0) {
-                    buttonA1.setText("O");
-                } else if (y[0] == 0 && y[1] == 1) {
-                    buttonA2.setText("O");
-                } else if (y[0] == 0 && y[1] == 2) {
-                    buttonA3.setText("O");
-                } else if (y[0] == 1 && y[1] == 0) {
-                    buttonB1.setText("O");
-                } else if (y[0] == 1 && y[1] == 1) {
-                    buttonB2.setText("O");
-                } else if (y[0] == 1 && y[1] == 2) {
-                    buttonB3.setText("O");
-                } else if (y[0] == 2 && y[1] == 0) {
-                    buttonC1.setText("O");
-                } else if (y[0] == 2 && y[1] == 1) {
-                    buttonC2.setText("O");
-                } else if (y[0] == 2 && y[1] == 2) {
-                    buttonC3.setText("O");
-                }
+                    ai.setPressed(y[0], y[1]);
 
-                if (ai.checkWinAi() == true) {
-                    JOptionPane.showMessageDialog(null, "You Lost!");
-                    System.exit(NORMAL);
+                    if (y[0] == 0 && y[1] == 0) {
+                        buttonA1.setText("O");
+                    } else if (y[0] == 0 && y[1] == 1) {
+                        buttonA2.setText("O");
+                    } else if (y[0] == 0 && y[1] == 2) {
+                        buttonA3.setText("O");
+                    } else if (y[0] == 1 && y[1] == 0) {
+                        buttonB1.setText("O");
+                    } else if (y[0] == 1 && y[1] == 1) {
+                        buttonB2.setText("O");
+                    } else if (y[0] == 1 && y[1] == 2) {
+                        buttonB3.setText("O");
+                    } else if (y[0] == 2 && y[1] == 0) {
+                        buttonC1.setText("O");
+                    } else if (y[0] == 2 && y[1] == 1) {
+                        buttonC2.setText("O");
+                    } else if (y[0] == 2 && y[1] == 2) {
+                        buttonC3.setText("O");
+                    }
+
+                    if (ai.checkWinAi() == true) {
+                        JOptionPane.showMessageDialog(null, "You Lost!");
+                        System.exit(NORMAL);
+                    }
                 }
             }
         });
@@ -421,17 +467,18 @@ public class Brett extends JFrame {
      * @param button the Button which has been selected
      * @param zeile the column of the button
      * @param reihe the row of the button
+     * @return
      */
-    public void press(JButton button, int zeile, int reihe) {
+    public boolean press(JButton button, int zeile, int reihe) {
 
-        if (!pressed[zeile][reihe]) {
+        if (!pressed[zeile][reihe] && !ai.getAiPressed()[zeile][reihe]) {
 
             pressed[zeile][reihe] = true;
             button.setText("X");
 
         } else {
-            JOptionPane.showMessageDialog(null, "You are retarded");
-
+            JOptionPane.showMessageDialog(null, "You can't select a field twice!");
+            return false;
         }
 
         pressed[zeile][reihe] = true;
@@ -443,5 +490,6 @@ public class Brett extends JFrame {
 
         ai.getAvailableMoves();
 
+        return true;
     }
 }

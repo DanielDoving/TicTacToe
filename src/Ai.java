@@ -7,6 +7,10 @@ public class Ai {
 	List<int[]> availableMoves = new ArrayList<>();
 	List<int[]> usedMoves = new ArrayList<>();
 
+	public boolean[][] getAiPressed() {
+		return aiPressed;
+	}
+
 	public boolean[][] aiPressed = new boolean[3][3];
 
 	public Ai(boolean[][] pressed) {
@@ -112,6 +116,10 @@ public class Ai {
 	public int[] getRandom() {
 
 		availableMoves = getAvailableMoves();
+
+		if (getAvailableMoves().size() == 0){
+			return new int[]{4, 4};
+		}
 
 		Random rand = new Random();
 		int[] random = availableMoves.get(rand.nextInt(availableMoves.size()));
