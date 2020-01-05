@@ -400,18 +400,31 @@ public class Brett extends JFrame {
 
     }
 
+    /**
+     * Returns the button which has been pressed
+     * @return the button which has been pressed
+     */
     public static boolean[][] getPressed() {
         return pressed;
     }
 
+    /**
+     * Returns the button which has been selected by the AI
+     * @return the button which has ben selected by the AI
+     */
     public static boolean[][] getPressedAi() {
         return pressedAi;
     }
 
-    // Methode Press
+    /**
+     * Presses a button and sets the Users character "X" in said button
+     * @param button the Button which has been selected
+     * @param zeile the column of the button
+     * @param reihe the row of the button
+     */
     public void press(JButton button, int zeile, int reihe) {
 
-        if (pressed[zeile][reihe] == false) {
+        if (!pressed[zeile][reihe]) {
 
             pressed[zeile][reihe] = true;
             button.setText("X");
@@ -423,7 +436,7 @@ public class Brett extends JFrame {
 
         pressed[zeile][reihe] = true;
 
-        if (ai.checkWinPlayer() == true) {
+        if (Ai.checkWinPlayer()) {
             JOptionPane.showMessageDialog(null, "You win!");
             System.exit(NORMAL);
         }
@@ -431,9 +444,4 @@ public class Brett extends JFrame {
         ai.getAvailableMoves();
 
     }
-
-    public void pressRandom(JButton button, int zeile, int reihe) {
-
-    }
-
 }
